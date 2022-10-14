@@ -40,6 +40,24 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      {
+        type: "basic",
+        description: "Single Quote -> Hyper Key",
+        from: {
+          key_code: "backslash",
+        },
+        to: [
+          {
+            key_code: "left_shift",
+            modifiers: ["left_command", "left_control", "left_option"],
+          },
+        ],
+        to_if_alone: [
+          {
+            key_code: "backslash",
+          },
+        ],
+      },
     ],
   },
   ...createHyperSubLayers({
@@ -58,6 +76,17 @@ const rules: KarabinerRules[] = [
     },
     get spacebar() {
       return this.o;
+    },
+    w: {
+      n: {
+        description: "Window: Next Window",
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
     },
     // s = "System"
     s: {
