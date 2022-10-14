@@ -45,91 +45,23 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
     // o = "Open" applications
     o: {
-      g: app("Google Chrome"),
-      c: app("Cron"),
+      w: app("WhatsApp"),
       v: app("Visual Studio Code"),
-      d: app("Discord"),
-      s: app("Slack"),
-      e: app("Superhuman"),
-      n: app("Notion"),
-      t: app("Terminal"),
-      // Open todo list managed via *H*ypersonic
-      h: open(
-        "notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304"
-      ),
-      z: app("zoom.us"),
+      s: app("Safari"),
+      r: app("RemNote"),
+      c: app("Slack"),
+      p: app("Spotify"),
+      t: app("Tandem"),
+      g: app("Google Chrome"),
+      d: app("Google Chrome Canary"),
+      l: open("https://linear.app"),
     },
-
-    // w = "Window" via rectangle.app
-    w: {
-      h: {
-        description: "Window: First Third",
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["right_option", "right_control"],
-          },
-        ],
-      },
-      l: {
-        description: "Window: Last Third",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_option", "right_control"],
-          },
-        ],
-      },
-      y: {
-        description: "Window: Left Half",
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      o: {
-        description: "Window: Right Half",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      f: {
-        description: "Window: Full Screen",
-        to: [
-          {
-            key_code: "f",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      u: {
-        description: "Window: Previous Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control", "right_shift"],
-          },
-        ],
-      },
-      i: {
-        description: "Window: Next Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
+    get spacebar() {
+      return this.o;
     },
-
     // s = "System"
     s: {
-      u: {
+      i: {
         to: [
           {
             key_code: "volume_increment",
@@ -143,7 +75,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      i: {
+      o: {
         to: [
           {
             key_code: "display_brightness_increment",
@@ -179,15 +111,15 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      e: {
-        to: [
-          {
-            // Emoji picker
-            key_code: "spacebar",
-            modifiers: ["right_control", "right_command"],
-          },
-        ],
-      },
+      // e: {
+      //   to: [
+      //     {
+      //       // Emoji picker
+      //       key_code: "spacebar",
+      //       modifiers: ["right_control", "right_command"],
+      //     },
+      //   ],
+      // },
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
@@ -206,13 +138,13 @@ const rules: KarabinerRules[] = [
         to: [{ key_code: "right_arrow" }],
       },
       // Magicmove via homerow.app
-      m: {
-        to: [{ key_code: "f", modifiers: ["right_control"] }],
-      },
-      // Scroll mode via homerow.app
-      s: {
-        to: [{ key_code: "j", modifiers: ["right_control"] }],
-      },
+      // m: {
+      //   to: [{ key_code: "f", modifiers: ["right_control"] }],
+      // },
+      // // Scroll mode via homerow.app
+      // s: {
+      //   to: [{ key_code: "j", modifiers: ["right_control"] }],
+      // },
     },
   }),
 ];
